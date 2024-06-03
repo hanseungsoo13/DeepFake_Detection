@@ -136,7 +136,7 @@ SimCLR을 통해 학습된 ResNet의 가중치를 이용하여 **실제 영상�
 - FF++
 - DFDC
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a579cd4-49aa-4053-a80c-3326e3828d67/Untitled.png)
+![Untitled]([https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a579cd4-49aa-4053-a80c-3326e3828d67/Untitled.png](https://private-user-images.githubusercontent.com/75753717/336172601-9f252013-730f-416c-bb0f-78aabc4d9d9e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTc0MzcwNDQsIm5iZiI6MTcxNzQzNjc0NCwicGF0aCI6Ii83NTc1MzcxNy8zMzYxNzI2MDEtOWYyNTIwMTMtNzMwZi00MTZjLWJiMGYtNzhhYWJjNGQ5ZDllLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA2MDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNjAzVDE3NDU0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM0MDhmNTk3MjE3ZDE0MTQ5NzhmNDg2NzI3Njc3MTQ1NTBlODVjZjFiOTBlNTg0YzI2OWIxNTMzZmRmYmQ0MjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.rkoFTJrYMg9XSGgDLOKY_XvEhdN99hfprDmYG2EMVVs))
 
 # 4. Experiments
 
