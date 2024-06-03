@@ -4,6 +4,7 @@
 
 딥페이크 탐지 모델은 영상이 주어지면 즉각적으로 탐지하는 것이 중요하다. 따라서 본 연구는 기존의 딥페이크 탐지 알고리즘에서 딥페이크 탐지 시간을 줄이는 것을 목적으로 하며, Gray Channel, SimCLR, ConvLSTM등을 적용하여 실험을 진행하고 가장 효율적인 딥페이크 탐지 방법론을 찾기 위해 연구함.
 
+
 # 1. Introduction
 
 ### DeepFake Detection이란?
@@ -22,7 +23,7 @@
     
     [Gray 채널 분석을 사용한 딥페이크 탐지 성능 비교 연구 | DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10612133)
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d422f051-f478-41a2-9ff6-bc23405be811/Untitled.png)
+    ![related works](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/37dae048-43f7-407b-8373-cfd40a690b42)
     
     - **Gray 채널**을 활용한 딥페이크 탐지의 효율성 확인
 2. A method of Detection of Deepfake Using Bidirectical Convolutional LSTM
@@ -41,7 +42,7 @@
 
 ## 3.1 Overall Flow
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be3e5fc5-053b-4683-98e0-e6f2fb61cd6b/Untitled.png)
+![overall flow](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/2a57e030-f339-4837-a897-0d9df5d794bb)
 
 전체적인 Overall Flow는 위 그림을 통해 알 수 있듯이 크게 3가지의 과정을 거칩니다.
 
@@ -57,7 +58,7 @@ Deepfake video는 사람의 얼굴 부분의 부자연스러움이 특징이므�
 
 FaceDetector로 **Retina Face**(2019)를 활용하였습니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c9cab555-7af9-4945-87ef-9bf663f6ed3b/Untitled.png)
+![face detector](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/d29184ae-5d87-42b1-9035-7962fa32209c)
 
 - **Retina Face란?**
     
@@ -79,7 +80,7 @@ Deep Fake 영상에 Face Detector를 적용해 얻은 Deep Fake face data들의 
     
     [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709)
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b947f873-2a70-4049-b603-4885747e2e57/Untitled.png)
+    ![simclr](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/9456419d-d356-4a27-aac5-c7b07b77710e)
     
     - **Self-superviesed Learning**을 활용하여 **Contrastive learning** 기법의 학습 방식
     - 다양한 **Augmentation**을 가한 image를 학습
@@ -101,14 +102,14 @@ SimCLR을 통해 학습된 ResNet의 가중치를 이용하여 **실제 영상�
 
 - **Conv-LSTM이란?**
     
-    ![Untitled]([https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a885e16-3e62-451f-b849-4b39a6a5cdbf/Untitled.png](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/6ece820e-5dc2-47ab-8edb-7e6bb5219deb))
+    ![convlstm](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/6ece820e-5dc2-47ab-8edb-7e6bb5219deb)
     
     - 시간의 흐름에 따라 **Convolution** 연산을 수행하는 방식
     - Convolustion 연산을 통해 **공간적 특징**을, **LSTM**을 통해 **시간적 특징**을 학습할 수가 있다.
 - **FPN & Video-Swin Transformer 설명**
     1. **FPN(Feature Pyramid Network)**
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e017d98f-1895-43cd-80a0-059bc453f68a/8b3ffa74-1f2c-4db8-b4b8-bddd26cc7092/Untitled.png)
+        ![fpn](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/59090c3f-bd53-4665-97b7-4edc9671fa94)
         
         - **Feature map을 Pyramid처럼 쌓아 올린 구조**로 다양한 scale의 Feature-map을 활용하기 때문에 다양한 scale에서 Object Detection이 가능하다는 장점이 있습니다.
         - **Buttom-Up** 방식으로 Feature-map의 크기를 점점 줄여가며 학습한 뒤에 **Top-Down** 방식으로 Feature-map의 크기를 다시 키워가면서 Detection하는 과정입니다.
@@ -118,7 +119,7 @@ SimCLR을 통해 학습된 ResNet의 가중치를 이용하여 **실제 영상�
             
     2. Video Swin Transformer
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e017d98f-1895-43cd-80a0-059bc453f68a/92a0bb9c-4c98-46d8-8423-ac2a07b7179e/Untitled.png)
+        ![video swin transformer](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/4fe351ad-5096-461e-93a3-3ae07e7ac5e7)
         
         - Image understaning 분야에서 개발된 모델인 **Swin Transformer**의 핵심 아이디어인 hierarchical structure에 local attention의 범위를spatiotemporal domain까지 확장하면서 **video task**에서 좋은 성능을 보인 모델
         - 논문 리뷰 참고
@@ -136,27 +137,26 @@ SimCLR을 통해 학습된 ResNet의 가중치를 이용하여 **실제 영상�
 - FF++
 - DFDC
 
-![Untitled]([https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a579cd4-49aa-4053-a80c-3326e3828d67/Untitled.png](https://private-user-images.githubusercontent.com/75753717/336172601-9f252013-730f-416c-bb0f-78aabc4d9d9e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTc0MzcwNDQsIm5iZiI6MTcxNzQzNjc0NCwicGF0aCI6Ii83NTc1MzcxNy8zMzYxNzI2MDEtOWYyNTIwMTMtNzMwZi00MTZjLWJiMGYtNzhhYWJjNGQ5ZDllLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA2MDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNjAzVDE3NDU0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM0MDhmNTk3MjE3ZDE0MTQ5NzhmNDg2NzI3Njc3MTQ1NTBlODVjZjFiOTBlNTg0YzI2OWIxNTMzZmRmYmQ0MjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.rkoFTJrYMg9XSGgDLOKY_XvEhdN99hfprDmYG2EMVVs))
-
+![dataset](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/9f252013-730f-416c-bb0f-78aabc4d9d9e)
 # 4. Experiments
 
 ### 1. 정확도
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33959419-e393-435f-97d2-30a152456df1/Untitled.png)
+![experiment1](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/852c77d1-c63c-4dde-aa57-4000eb794007)
 
 - Celeb-DF는 Gray Channel의 성능이, FF++데이터셋은 RGB의 성능이 좋았다.
 - ResNet18과 ResNet50 역시 데이터셋에 따라서 성능이 달라졌다.
 
 ### 2. Time Complexity
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f543ad5a-4a79-488f-9101-375fa55f04b2/Untitled.png)
+![experiment2](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/532cfb74-7b89-4dc1-94cb-17a77ff4f076)
 
 - **ResNet18을 사용한 모델이 예측 시간이 많이 단축**되었다.
 - RGB채널과 Gray채널로 변환한 데이터 간의 예측 시간에는 큰 차이가 없었다.
 
 ### 3. ConvLSTM
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6fe8f925-dc2a-4420-b552-3117e4013ffc/Untitled.png)
+![experiment3](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/5db14d91-ee90-4244-b47d-d356db1b1a80)
 
 - LSTM과 **Conv-LSTM**에서 정확도에는 확연한 차이가 있다.
 
