@@ -101,7 +101,7 @@ SimCLR을 통해 학습된 ResNet의 가중치를 이용하여 **실제 영상�
 
 - **Conv-LSTM이란?**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a885e16-3e62-451f-b849-4b39a6a5cdbf/Untitled.png)
+    ![Untitled]([https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a885e16-3e62-451f-b849-4b39a6a5cdbf/Untitled.png](https://github.com/hanseungsoo13/DeepFake_Detection/assets/75753717/6ece820e-5dc2-47ab-8edb-7e6bb5219deb))
     
     - 시간의 흐름에 따라 **Convolution** 연산을 수행하는 방식
     - Convolustion 연산을 통해 **공간적 특징**을, **LSTM**을 통해 **시간적 특징**을 학습할 수가 있다.
