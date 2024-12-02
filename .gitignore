@@ -1,0 +1,3 @@
+runs
+weights
+SimCLR/feature_eval/*.zip
